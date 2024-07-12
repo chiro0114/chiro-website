@@ -9,13 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'text-gradient': 'linear-gradient(0deg, #FF6383 0%, #4C9FC4 100%)',
       },
-    },
-    fontFamily: {
-      amador: ['amador', 'sans-serif'],
     },
   },
   plugins: [],

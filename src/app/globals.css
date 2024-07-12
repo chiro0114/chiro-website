@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .logo-font {
-    font-family: carol-gothic, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-  }
+.title-gradient {
+  background: linear-gradient(to right, #ff6383, #4c9fc4);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
