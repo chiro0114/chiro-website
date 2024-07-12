@@ -20,7 +20,7 @@ const MainWrapper = ({ children }: { children: React.ReactNode }) => {
             className=''
           />
           <div
-            className={`${inknutAntiqua.className} absolute left-0 top-0 h-full w-full text-white`}
+            className={`${inknutAntiqua.className} scrollbar-hidden absolute left-0 top-0 h-full w-full overflow-y-scroll text-white`}
           >
             {children}
           </div>
