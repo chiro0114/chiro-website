@@ -1,12 +1,11 @@
 import ChangePageBtn from '@/components/btn/change-page-btn'
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function About() {
   const profile = [
     { title: 'Name', text: '田中 志音' },
     { title: 'Location', text: '北海道 札幌周辺' },
-    { title: 'Contact', text: 'varichiro@gmail.com' },
+    { title: 'Contact', text: 'chiro.dev.work@gmail.com' },
   ]
 
   const businessContents = [

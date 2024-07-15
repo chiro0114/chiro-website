@@ -13,7 +13,7 @@ const Input = forwardRef<HTMLInputElement, InputProps>(({ className, ...props },
       {...props}
       ref={ref}
       className={twMerge(
-        `placeholder-text-btnBorderC touch-manipulation border-transparent bg-transparent file:border-0 file:bg-transparent file:text-base file:font-medium placeholder:text-neutral-400 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
+        `touch-manipulation border-transparent bg-transparent file:border-0 file:bg-transparent file:text-base file:font-medium placeholder:text-[#636363] focus:outline-none disabled:cursor-not-allowed disabled:opacity-50`,
         className,
       )}
     />

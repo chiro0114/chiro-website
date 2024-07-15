@@ -1,6 +1,7 @@
 import { Inknut_Antiqua } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
+import RegenerationBar from '../regeneration-bar'
 
 const inknutAntiqua = Inknut_Antiqua({
   subsets: ['latin'],
@@ -10,7 +11,7 @@ const inknutAntiqua = Inknut_Antiqua({
 const MainWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
     <main>
-      <div className='bg-[#1B1F26]'>
+      <div className='relative bg-[#1B1F26]'>
         <div className='relative mx-auto w-[80%] max-w-[1440px]'>
           <Image
             src='/main-bg.png'
@@ -25,6 +26,7 @@ const MainWrapper = ({ children }: { children: React.ReactNode }) => {
             {children}
           </div>
         </div>
+        <RegenerationBar />
       </div>
       <div className='mx-4 mt-3'>
         <h3 className='text-3xl font-bold'>【Home】トップページ</h3>
