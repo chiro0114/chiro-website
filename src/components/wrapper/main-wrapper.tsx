@@ -2,6 +2,7 @@ import { Inknut_Antiqua } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
 import RegenerationBar from '../regeneration-bar'
+import PageTitle from '../page-title'
 
 const inknutAntiqua = Inknut_Antiqua({
   subsets: ['latin'],
@@ -29,7 +30,7 @@ const MainWrapper = ({ children }: { children: React.ReactNode }) => {
         <RegenerationBar />
       </div>
       <div className='mx-4 mt-3'>
-        <h3 className='text-3xl font-bold'>【Home】トップページ</h3>
+        <PageTitle />
         <div className='mt-3 flex items-center gap-10'>
           <div className='flex items-center gap-2'>
             <div>
