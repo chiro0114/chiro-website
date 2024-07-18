@@ -23,7 +23,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit(async (data) => {
-        console.log(await sendEmail())
+        await sendEmail()
       })}
       className='mx-auto mt-8 flex w-fit flex-col gap-5'
     >
