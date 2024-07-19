@@ -34,7 +34,7 @@ const ContactForm = () => {
       })}
       className='mx-auto mt-8 flex w-fit flex-col gap-5'
     >
-      {error && <p className='text-center text-lg text-[#FF2F2F]'>{error}</p>}
+      {error && <p className='text-mainRed text-center text-lg'>{error}</p>}
       <ContactInput
         id='name'
         label='氏名・担当者名'

@@ -11,6 +11,9 @@ const config: Config = {
       backgroundImage: {
         'text-gradient': 'linear-gradient(0deg, #FF6383 0%, #4C9FC4 100%)',
       },
+      colors: {
+        mainRed: '#FF2F2F',
+      },
     },
   },
   plugins: [],

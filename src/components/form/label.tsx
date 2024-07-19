@@ -10,7 +10,7 @@ const Label = ({ isRequire, children, className, htmlFor }: Props) => {
   return (
     <label htmlFor={htmlFor} className={twMerge('text-lg', className)}>
       {children}
-      {isRequire && <span className='text-[#FF2F2F]'>*</span>}
+      {isRequire && <span className='text-mainRed'>*</span>}
     </label>
   )
 }
