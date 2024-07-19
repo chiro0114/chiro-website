@@ -1,39 +1,47 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import ContactInput from './contact-input'
 import ContactTextarea from './contact-textaret'
 import { useForm } from 'react-hook-form'
 import sendEmail from '../actions/send-email'
+import { ContactFormSchema, ContactFormType } from '@/validations/schema'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const ContactForm = () => {
+  const [error, setError] = useState('')
+
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm({
+  } = useForm<ContactFormType>({
     defaultValues: {
       name: '',
       company: '',
       mail: '',
       text: '',
     },
+    resolver: zodResolver(ContactFormSchema),
   })
 
   return (
     <form
       onSubmit={handleSubmit(async (data) => {
-        await sendEmail()
+        const result = await sendEmail({ formData: data })
+        if (!result) return
+        setError(result.error)
       })}
       className='mx-auto mt-8 flex w-fit flex-col gap-5'
     >
+      {error && <p className='text-center text-lg text-[#FF2F2F]'>{error}</p>}
       <ContactInput
         id='name'
         label='氏名・担当者名'
         placeholder='山田 太郎'
         isRequire
         error={errors.name?.message}
-        {...register('name', { required: { value: true, message: '必須項目です' } })}
+        {...register('name')}
       />
       <ContactInput
         id='company'
@@ -48,18 +56,11 @@ const ContactForm = () => {
         placeholder='sample@sample.com'
         error={errors.mail?.message}
         isRequire
-        {...register('mail', {
-          pattern: {
-            value:
-              /^[a-zA-Z0-9_-]+(.[a-zA-Z0-9_-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9].)+[a-zA-Z]{2,}$/,
-            message: 'メールの形式が正しくありません',
-          },
-          required: { value: true, message: '必須項目です' },
-        })}
+        {...register('mail')}
       />
       <ContactTextarea
         id='text'
-        {...register('text', { required: { value: true, message: '必須項目です' } })}
+        {...register('text')}
         label='お問い合わせ内容'
         placeholder='ご質問・ご相談などお気軽にご連絡ください'
         error={errors.text?.message}

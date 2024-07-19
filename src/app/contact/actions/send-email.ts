@@ -1,9 +1,10 @@
 'use server'
 
+import { ContactFormSchema, ContactFormType } from '@/validations/schema'
+import { redirect } from 'next/navigation'
 import nodemailer from 'nodemailer'
 
-export default async function sendEmail() {
-  console.log(process.env.NEXT_PUBLIC_MAIL_ADDRESS)
+export default async function sendEmail({ formData }: { formData: ContactFormType }) {
   const transporter = nodemailer.createTransport({
     host: 'mail1030.onamae.ne.jp',
     port: 587,
@@ -14,20 +15,18 @@ export default async function sendEmail() {
     },
   })
 
-  // async..await is not allowed in global scope, must use a wrapper
-  async function main() {
-    // send mail with defined transport object
-    const info = await transporter.sendMail({
-      from: 'chiro.dev.work@gmail.com', // sender address
-      to: 'contact@chiro0.com', // list of receivers
-      subject: 'Hello ✔', // Subject line
-      text: 'Hello world?', // plain text body
-      html: '<b>Hello world?</b>', // html body
-    })
+  const parsed = ContactFormSchema.safeParse(formData)
+  if (!parsed.success)
+    return { error: '予期せぬエラーが発生しました。再度お試しください。' }
+  // send mail with defined transport object
+  await transporter.sendMail({
+    from: formData.mail,
+    to: 'contact@chiro0.com',
+    subject: 'お問い合わせ内容',
+    html: `<p>${formData.company}</p>
+            <p>${formData.text}</p>
+      `,
+  })
 
-    console.log('Message sent: %s', info.messageId)
-    // Message sent: <d786aa62-4e0a-070a-47ed-0b0666549519@ethereal.email>
-  }
-
-  main().catch(console.error)
+  redirect('/contact/thanks')
 }

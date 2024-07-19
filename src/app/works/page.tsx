@@ -32,23 +32,6 @@ export default async function Works() {
             </Link>
           </div>
         ))}
-        {works.map((work) => (
-          <div key={work.id}>
-            <Link href={`works/${work.id}`}>
-              <Image
-                src={work.imagePath.url}
-                width={295}
-                height={270}
-                alt={work.id}
-                className='w-full'
-              />
-              <p className='mt-1 text-sm'>
-                {work.client ? `${work.client} 様` : '自主制作'}
-              </p>
-              <p className='mt-1'>{work.serviceName}</p>
-            </Link>
-          </div>
-        ))}
       </div>
       <ChangePageBtn href='/contact' />
       <ChangePageBtn href='/about' isPrev />
