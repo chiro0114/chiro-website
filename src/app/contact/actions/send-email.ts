@@ -19,14 +19,18 @@ export default async function sendEmail({ formData }: { formData: ContactFormTyp
   if (!parsed.success)
     return { error: '予期せぬエラーが発生しました。再度お試しください。' }
   // send mail with defined transport object
-  await transporter.sendMail({
-    from: formData.mail,
-    to: 'contact@chiro0.com',
-    subject: 'お問い合わせ内容',
-    html: `<p>${formData.company}</p>
+  try {
+    await transporter.sendMail({
+      from: formData.mail,
+      to: 'contact@chiro0.com',
+      subject: 'お問い合わせ内容',
+      html: `<p>${formData.company}</p>
             <p>${formData.text}</p>
       `,
-  })
+    })
+  } catch (e) {
+    console.log(e)
+  }
 
   redirect('/contact/thanks')
 }
