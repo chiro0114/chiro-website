@@ -15,8 +15,6 @@ export default async function sendEmail({ formData }: { formData: ContactFormTyp
     },
   })
 
-  console.log(process.env.MAIL_ADDRESS, process.env.MAIL_PASS)
-
   const parsed = ContactFormSchema.safeParse(formData)
   if (!parsed.success)
     return { error: '予期せぬエラーが発生しました。再度お試しください。' }
