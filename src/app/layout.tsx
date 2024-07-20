@@ -3,8 +3,7 @@ import { Noto_Sans_JP } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/header'
 import MainWrapper from '@/components/wrapper/main-wrapper'
-
-const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] })
+import { RootWrapper } from '@/components/wrapper/root-wrapper'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -18,10 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='ja'>
-      <body className={notoSansJp.className}>
+      <RootWrapper>
         <Header />
         <MainWrapper>{children}</MainWrapper>
-      </body>
+      </RootWrapper>
     </html>
   )
 }

@@ -1,14 +1,28 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useContext } from 'react'
 import { BsMoon, BsSun } from 'react-icons/bs'
 import { twMerge } from 'tailwind-merge'
+import { ThemeContext } from '../wrapper/root-wrapper'
 
 const SwitchThemeBtn = () => {
-  const [isDark, setIsDark] = useState(false)
+  const themeContext = useContext(ThemeContext)
+
+  if (!themeContext) return
+
+  const { theme, setTheme } = themeContext
+
+  const isDark = theme === 'dark'
   return (
     <button
-      onClick={() => setIsDark((prev) => !prev)}
+      onClick={() => {
+        if (theme !== 'dark') {
+          localStorage.setItem('theme', 'dark')
+          return setTheme('dark')
+        }
+        localStorage.setItem('theme', 'light')
+        setTheme('light')
+      }}
       className='relative flex w-fit items-center rounded-full border-2 border-[#4E4E4E]'
     >
       <div
