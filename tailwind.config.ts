@@ -13,6 +13,7 @@ const config: Config = {
       },
       colors: {
         mainRed: '#FF2F2F',
+        mainBlack: '#0F0F0F',
       },
     },
   },

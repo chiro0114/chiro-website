@@ -11,7 +11,7 @@ const inknutAntiqua = Inknut_Antiqua({
 
 const MainWrapper = ({ children }: { children: React.ReactNode }) => {
   return (
-    <main>
+    <main className='dark:bg-mainBlack mini-h-screen bg-white'>
       <div className='relative bg-[#1B1F26]'>
         <div className='relative mx-auto w-[80%] max-w-[1440px]'>
           <Image
@@ -29,7 +29,7 @@ const MainWrapper = ({ children }: { children: React.ReactNode }) => {
         </div>
         <RegenerationBar />
       </div>
-      <div className='mx-4 mt-3'>
+      <div className='mx-4 mt-3 text-black dark:text-white'>
         <PageTitle />
         <div className='mt-3 flex items-center gap-10'>
           <div className='flex items-center gap-2'>
@@ -51,7 +51,7 @@ const MainWrapper = ({ children }: { children: React.ReactNode }) => {
             </div>
           </div>
           <div>
-            <button className='rounded-full bg-black px-3 py-2 text-sm text-white'>
+            <button className='rounded-full bg-black px-3 py-2 text-sm text-white dark:bg-[#F1F1F1] dark:text-black'>
               チャンネル登録
             </button>
           </div>

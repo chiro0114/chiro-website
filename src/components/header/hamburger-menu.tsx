@@ -33,9 +33,9 @@ const HamburgerMenu = () => {
         onClick={() => setToggleDrawer((prev) => !prev)}
         className='flex flex-col gap-[5px]'
       >
-        <span className='inline-block h-[1px] w-[18px] bg-white'></span>
-        <span className='inline-block h-[1px] w-[18px] bg-white'></span>
-        <span className='inline-block h-[1px] w-[18px] bg-white'></span>
+        <span className='inline-block h-[1px] w-[18px] bg-black duration-300 dark:bg-white'></span>
+        <span className='inline-block h-[1px] w-[18px] bg-black duration-300 dark:bg-white'></span>
+        <span className='inline-block h-[1px] w-[18px] bg-black duration-300 dark:bg-white'></span>
       </button>
       <div
         onClick={() => setToggleDrawer(false)}

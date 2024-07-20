@@ -8,7 +8,7 @@ import SiteLogo from '../site-logo'
 
 const Header = () => {
   return (
-    <header className='sticky left-0 top-0 z-50 w-full bg-[#0F0F0F] text-white dark:bg-white dark:text-black'>
+    <header className='sticky left-0 top-0 z-50 w-full bg-white text-black duration-300 dark:bg-[#0F0F0F] dark:text-white'>
       <div className='flex items-center justify-between px-8 py-2'>
         <div className='flex items-center gap-6'>
           <HamburgerMenu />
