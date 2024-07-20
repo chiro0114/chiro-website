@@ -25,8 +25,6 @@ const ContactForm = () => {
     resolver: zodResolver(ContactFormSchema),
   })
 
-  console.log(process.env.MAIL_PASS)
-
   return (
     <form
       onSubmit={handleSubmit(async (data) => {
