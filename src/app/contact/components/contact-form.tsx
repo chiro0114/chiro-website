@@ -25,8 +25,6 @@ const ContactForm = () => {
     resolver: zodResolver(ContactFormSchema),
   })
 
-  console.log(process.env.NEXT_PUBLIC_MAIL_ADDRESS)
-
   return (
     <form
       onSubmit={handleSubmit(async (data) => {

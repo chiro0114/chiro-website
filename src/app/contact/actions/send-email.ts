@@ -10,8 +10,8 @@ export default async function sendEmail({ formData }: { formData: ContactFormTyp
     port: 587,
     secure: false,
     auth: {
-      user: process.env.NEXT_PUBLIC_MAIL_ADDRESS,
-      pass: process.env.NEXT_PUBLIC_MAIL_PASS,
+      user: process.env.MAIL_ADDRESS,
+      pass: process.env.MAIL_PASS,
     },
   })
 
