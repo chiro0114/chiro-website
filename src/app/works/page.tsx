@@ -2,10 +2,12 @@ import ChangePageBtn from '@/components/btn/change-page-btn'
 import PageHeading from '@/components/page-heading'
 import { client } from '@/libs/client'
 import { WorksType } from '@/types/works'
+import { revalidatePath } from 'next/cache'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default async function Works() {
+  revalidatePath('/works')
   const data: WorksType = await client.get({
     endpoint: 'works',
   })
