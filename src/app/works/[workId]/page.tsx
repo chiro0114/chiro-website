@@ -7,7 +7,6 @@ import Link from 'next/link'
 import { redirect } from 'next/navigation'
 
 export default async function Work({ params }: { params: { workId: string } }) {
-  revalidatePath('/works/[workId]')
   const data: WorksType = await client.get({
     endpoint: 'works',
   })
