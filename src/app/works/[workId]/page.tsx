@@ -19,24 +19,26 @@ export default async function Work({ params }: { params: { workId: string } }) {
   const wrapText = work.text.split('\n').filter((text) => text)
 
   return (
-    <div className='mx-20 mt-16'>
+    <div className='m-6 md:mx-20 md:mt-16'>
       <Link href='/works' className='inline-block py-3'>
         <Image src='/back-arrow.png' width={52} height={5} alt='実績一覧へ戻る' />
       </Link>
-      <div className='mx-12'>
-        <div className='mt-8 flex items-start gap-20'>
+      <div className='md:mx-12'>
+        <div className='mt-6 flex flex-col items-start gap-4 md:mt-8 md:flex-row md:gap-8'>
           <div className='flex-1'>
-            <Image
-              src={work.imagePath.url}
-              width={work.imagePath.width}
-              height={work.imagePath.height}
-              alt={work.serviceName}
-            />
+            <Link href={work.url}>
+              <Image
+                src={work.imagePath.url}
+                width={work.imagePath.width}
+                height={work.imagePath.height}
+                alt={work.serviceName}
+              />
+            </Link>
           </div>
-          <div className='basis-96'>
+          <div className='md:basis-96'>
             <p>{work.client ? `${work.client} 様` : '自主制作'} </p>
             <h2 className='mt-1 text-xl'>{work.serviceName}</h2>
-            <div className='mt-6'>
+            <div className='mt-4 md:mt-6'>
               <p className='text-lg'>使用技術</p>
               <p className='mt-1 flex flex-wrap gap-2'>
                 {work.usedTech.map((tech) => (
@@ -44,7 +46,7 @@ export default async function Work({ params }: { params: { workId: string } }) {
                 ))}
               </p>
             </div>
-            <div className='mt-6'>
+            <div className='mt-4 md:mt-6'>
               <p className='text-lg'>担当</p>
               <p className='mt-1 flex flex-wrap gap-2'>
                 {work.inCharge.map((e) => (
@@ -54,7 +56,7 @@ export default async function Work({ params }: { params: { workId: string } }) {
             </div>
           </div>
         </div>
-        <div className='mt-6'>
+        <div className='mt-6 md:mt-6'>
           {wrapText.map((text) => (
             <p key={text} className='mb-3'>
               {text}

@@ -39,7 +39,7 @@ const ContactForm = () => {
           }
           setIsPending(false)
         })}
-        className='mx-auto mt-8 flex w-fit flex-col gap-5'
+        className='mx-auto mt-5 flex flex-col gap-5 md:mt-8 md:w-fit'
       >
         {error && <p className='text-mainRed text-center text-lg'>{error}</p>}
         <ContactInput

@@ -1,14 +1,7 @@
 'use client'
 
-import dynamic from 'next/dynamic'
 import { Noto_Sans_JP } from 'next/font/google'
-import React, {
-  createContext,
-  Dispatch,
-  SetStateAction,
-  useEffect,
-  useState,
-} from 'react'
+import React, { createContext, Dispatch, SetStateAction, useState } from 'react'
 
 const notoSansJp = Noto_Sans_JP({ subsets: ['latin'] })
 
@@ -22,17 +15,10 @@ const ThemeContext = createContext<ThemeContextType | null>(null)
 
 const RootWrapper = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState('light')
-
-  useEffect(() => {
-    const theme = localStorage.getItem('theme')
-    if (theme) {
-      setTheme(theme)
-    }
-  }, [])
   return (
     <body className={`${notoSansJp.className} ${theme === 'dark' && 'dark'}`}>
       <ThemeContext.Provider value={{ theme, setTheme }}>
-        {children}
+        <div className='dark:bg-mainBlack bg-white xl:min-h-screen'>{children}</div>
       </ThemeContext.Provider>
     </body>
   )

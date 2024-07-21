@@ -1,4 +1,5 @@
 import ChangePageBtn from '@/components/btn/change-page-btn'
+import PageHeading from '@/components/page-heading'
 import { client } from '@/libs/client'
 import { WorksType } from '@/types/works'
 import Image from 'next/image'
@@ -13,8 +14,8 @@ export default async function Works() {
 
   return (
     <div className='mt-8'>
-      <h3 className='title-gradient mx-auto w-fit text-[32px]'>Works</h3>
-      <div className='mx-auto mt-10 grid w-4/5 grid-cols-3 gap-8'>
+      <PageHeading text='Works' />
+      <div className='mt-10 grid w-full grid-cols-2 gap-8 px-4 md:mx-auto md:w-4/5 md:grid-cols-3 md:p-0'>
         {works.map((work) => (
           <div key={work.id}>
             <Link href={`works/${work.id}`}>

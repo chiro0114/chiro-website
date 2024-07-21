@@ -32,18 +32,18 @@ const SwitchThemeBtn = () => {
             isDark && 'translate-x-full',
           )}
         />
-        <div className='px-4 py-[6px]'>
+        <div className='px-3 py-1 xl:px-4 xl:py-[6px]'>
           <BsSun
             className={twMerge(
-              'h-5 w-5 text-white dark:text-black',
+              'h-4 w-4 text-white xl:h-5 xl:w-5 dark:text-black',
               isDark && 'text-black dark:text-white',
             )}
           />
         </div>
-        <div className='px-4 py-[6px]'>
+        <div className='px-3 py-1 xl:px-4 xl:py-[6px]'>
           <BsMoon
             className={twMerge(
-              'h-5 w-5 text-black dark:text-white',
+              'h-4 w-4 text-black xl:h-5 xl:w-5 dark:text-white',
               isDark && 'text-white dark:text-black',
             )}
           />

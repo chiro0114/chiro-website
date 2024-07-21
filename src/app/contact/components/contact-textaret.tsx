@@ -12,15 +12,15 @@ type Props = {
 const ContactTextarea = forwardRef<HTMLTextAreaElement, Props>(
   ({ id, name, label, placeholder, isRequire, error, ...props }: Props, ref) => {
     return (
-      <div>
-        <div className='items-top flex gap-12'>
-          <Label htmlFor={id} isRequire={isRequire} className='w-40'>
+      <div className='mx-auto w-5/6 md:w-auto'>
+        <div className='flex flex-col md:flex-row md:gap-12'>
+          <Label htmlFor={id} isRequire={isRequire} className='md:w-40'>
             {label}
           </Label>
           <Textarea
             id={id}
             name={name}
-            className='w-[400px] border border-white bg-white bg-opacity-50 px-3 py-2 text-black'
+            className='border border-white bg-white bg-opacity-50 px-3 py-2 text-black md:w-[400px]'
             rows={7}
             placeholder={placeholder}
             ref={ref}

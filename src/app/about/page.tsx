@@ -1,4 +1,5 @@
 import ChangePageBtn from '@/components/btn/change-page-btn'
+import PageHeading from '@/components/page-heading'
 import Image from 'next/image'
 
 export default function About() {
@@ -15,27 +16,30 @@ export default function About() {
   ]
   return (
     <div className='mt-8'>
-      <h3 className='title-gradient mx-auto w-fit text-[32px]'>About</h3>
-      <div className='mt-8 flex items-center justify-center gap-24'>
+      <PageHeading text='About' />
+      <div className='mt-8 flex flex-col items-center justify-center gap-6 xl:flex-row xl:gap-24'>
         <Image
           src='/profile-icon.png'
           width={156}
           height={156}
           alt='プロフィールアイコン'
-          className='rounded-full'
+          className='h-30 w-30 rounded-full xl:h-[156px] xl:w-[156px]'
         />
         <div className='flex flex-col gap-4'>
           {profile.map((data) => (
-            <div key={data.title} className='flex text-xl font-normal text-white'>
-              <span className='inline-block w-32'>{data.title}</span>
+            <div
+              key={data.title}
+              className='flex font-normal text-white md:text-lg xl:text-xl'
+            >
+              <span className='inline-block w-24 xl:w-32'>{data.title}</span>
               <span>{data.text}</span>
             </div>
           ))}
         </div>
       </div>
-      <div className='mx-auto mt-16 w-fit'>
+      <div className='mx-auto mt-10 w-fit'>
         <h4 className='text-center text-xl'>Business Contents</h4>
-        <div className='mt-6 flex items-center gap-9'>
+        <div className='mb-6 mt-6 flex items-center gap-9 xl:mb-0'>
           {businessContents.map((business) => (
             <div key={business.imagePath} className='flex flex-col items-center'>
               <Image
@@ -43,8 +47,11 @@ export default function About() {
                 width={100}
                 height={100}
                 alt={business.title}
+                className='h-20 w-20 xl:h-[100px] xl:w-[100px]'
               />
-              <p className='mt-3 text-center text-lg font-bold'>{business.title}</p>
+              <p className='mt-3 text-center text-base font-bold md:text-lg'>
+                {business.title}
+              </p>
             </div>
           ))}
         </div>

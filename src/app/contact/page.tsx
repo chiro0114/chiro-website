@@ -1,10 +1,11 @@
 import ChangePageBtn from '@/components/btn/change-page-btn'
 import ContactForm from './components/contact-form'
+import PageHeading from '@/components/page-heading'
 
 export default function Contact() {
   return (
-    <div className='mt-8'>
-      <h3 className='title-gradient mx-auto w-fit text-[32px]'>Contact</h3>
+    <div className='my-8'>
+      <PageHeading text='Contact' />
       <ContactForm />
       <ChangePageBtn href='/works' isPrev />
     </div>

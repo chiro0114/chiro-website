@@ -16,16 +16,16 @@ const ContactInput = forwardRef<HTMLInputElement, Props>(
     ref,
   ) => {
     return (
-      <div>
-        <div className='flex items-center gap-12'>
-          <Label htmlFor={id} isRequire={isRequire} className='w-40'>
+      <div className='mx-auto w-5/6 md:w-auto'>
+        <div className='flex flex-col md:flex-row md:gap-12 xl:items-center'>
+          <Label htmlFor={id} isRequire={isRequire} className='md:w-40'>
             {label}
           </Label>
           <Input
             id={id}
             type={type}
             name={name}
-            className='w-[400px] border border-white bg-white bg-opacity-50 px-3 py-2 text-black'
+            className='border border-white bg-white bg-opacity-50 px-3 py-2 text-black md:w-[400px]'
             placeholder={placeholder}
             ref={ref}
             {...props}
@@ -36,7 +36,23 @@ const ContactInput = forwardRef<HTMLInputElement, Props>(
     )
   },
 )
-
+// <div>
+//   <div className='mx-auto flex w-5/6 flex-col md:w-auto md:flex-row md:items-center md:gap-12'>
+//     <Label htmlFor={id} isRequire={isRequire} className='md:w-40'>
+//       {label}
+//     </Label>
+//     <Input
+//       id={id}
+//       type={type}
+//       name={name}
+//       className='border border-white bg-white bg-opacity-50 px-3 py-2 text-black'
+//       placeholder={placeholder}
+//       ref={ref}
+//       {...props}
+//     />
+//   </div>
+//   {error && <ContactError error={error} />}
+// </div>
 ContactInput.displayName = 'ContactInput'
 
 export default ContactInput
