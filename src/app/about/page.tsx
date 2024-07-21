@@ -15,7 +15,7 @@ export default function About() {
     { title: 'スマホアプリ開発事業', imagePath: '/native-app.png' },
   ]
   return (
-    <div className='mt-8'>
+    <div className='my-8'>
       <PageHeading text='About' />
       <div className='mt-8 flex flex-col items-center justify-center gap-6 xl:flex-row xl:gap-24'>
         <Image
@@ -37,8 +37,26 @@ export default function About() {
           ))}
         </div>
       </div>
-      <div className='mx-auto mt-10 w-fit'>
-        <h4 className='text-center text-xl'>Business Contents</h4>
+      <div className='mx-auto mt-14 w-fit'>
+        <h4 className='text-center text-2xl'>Profile</h4>
+        <div>
+          <p className='text-xl leading-loose'>
+            北海道生まれ、北海道育ち
+            <br />
+            小学生の頃からPCを用いたネットサーフィンに興味があり、高校在学中に独学でWeb開発を学ぶ。
+            <br />
+            高校卒業後 LeapIn株式会社に就職。
+            <br />
+            入社後はフロントエンドエンジニアとして要件定義や実装、テストなど多岐に渡る業務を経験。
+            <br />
+            Web開発以外にWebサイト制作、Webマーケティング、SNS運用なども経験。
+            <br /> 
+            LeapIn株式会社に2年従事した後、北海道へ戻り現在に至る。
+          </p>
+        </div>
+      </div>
+      <div className='mx-auto mt-14 w-fit'>
+        <h4 className='text-center text-2xl'>Business Contents</h4>
         <div className='mb-6 mt-6 flex items-center gap-9 xl:mb-0'>
           {businessContents.map((business) => (
             <div key={business.imagePath} className='flex flex-col items-center'>
