@@ -1,7 +1,5 @@
-import ChangePageBtn from '@/components/btn/change-page-btn'
 import { client } from '@/libs/client'
 import { WorksType } from '@/types/works'
-import { revalidatePath } from 'next/cache'
 import Image from 'next/image'
 import Link from 'next/link'
 import { redirect } from 'next/navigation'
