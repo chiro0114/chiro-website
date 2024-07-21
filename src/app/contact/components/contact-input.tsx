@@ -36,23 +36,6 @@ const ContactInput = forwardRef<HTMLInputElement, Props>(
     )
   },
 )
-// <div>
-//   <div className='mx-auto flex w-5/6 flex-col md:w-auto md:flex-row md:items-center md:gap-12'>
-//     <Label htmlFor={id} isRequire={isRequire} className='md:w-40'>
-//       {label}
-//     </Label>
-//     <Input
-//       id={id}
-//       type={type}
-//       name={name}
-//       className='border border-white bg-white bg-opacity-50 px-3 py-2 text-black'
-//       placeholder={placeholder}
-//       ref={ref}
-//       {...props}
-//     />
-//   </div>
-//   {error && <ContactError error={error} />}
-// </div>
 ContactInput.displayName = 'ContactInput'
 
 export default ContactInput
