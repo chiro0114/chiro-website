@@ -7,7 +7,7 @@ const ChangePageBtn = ({ href, isPrev }: { href: string; isPrev?: boolean }) => 
     <Link
       href={href}
       className={twMerge(
-        'absolute top-1/2 hidden -translate-y-1/2 rounded-full border xl:block',
+        'fixed top-1/2 hidden -translate-y-1/2 rounded-full border xl:block',
         !isPrev && 'right-5',
         isPrev && 'left-5',
       )}
