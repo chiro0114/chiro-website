@@ -20,13 +20,13 @@ export default async function Work({ params }: { params: { workId: string } }) {
 
   return (
     <div className='m-6 md:mx-20 md:mt-16'>
-      <Link href='/works' className='inline-block py-3'>
+      <Link href='/works' className='inline-block py-3' rel='noopener noreferrer'>
         <Image src='/back-arrow.png' width={52} height={5} alt='実績一覧へ戻る' />
       </Link>
       <div className='md:mx-12'>
         <div className='mt-6 flex flex-col items-start gap-4 md:mt-8 md:flex-row md:gap-8'>
           <div className='flex-1'>
-            <Link href={work.url}>
+            <Link href={work.url} target='_blank'>
               <Image
                 src={work.imagePath.url}
                 width={work.imagePath.width}
